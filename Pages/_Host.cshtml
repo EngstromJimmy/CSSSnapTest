@@ -1,0 +1,24 @@
+﻿@page "/"
+@namespace BlazorApp13.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>BlazorApp13</title>
+    <base href="~/" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="BlazorApp13.styles.css" rel="stylesheet" />
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+  
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

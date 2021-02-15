@@ -1,0 +1,22 @@
+﻿@page "/"
+
+    <Virtualize Items="list" Context="c">
+        <section>
+            <h1>Section @c.MyProperty</h1>
+        </section>
+    </Virtualize>
+    @code
+{
+        List<Segment> list = new();
+        protected override Task OnInitializedAsync()
+        {
+            for (int a = 0; a < 100; a++)
+            {
+                list.Add(new Segment() { MyProperty = a.ToString() }); ;
+            }
+            return base.OnInitializedAsync();
+        }
+
+
+
+    }
