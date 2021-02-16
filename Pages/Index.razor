@@ -1,19 +1,30 @@
 ﻿@page "/"
 
+    <div id="scroller">
+
     <Virtualize Items="list" Context="c">
         <section>
             <h1>Section @c.MyProperty</h1>
         </section>
     </Virtualize>
+
+    </div>
+    
     @code
 {
         List<Segment> list = new();
         protected override Task OnInitializedAsync()
         {
+
+            var newList = new List<Segment>();
+
             for (int a = 0; a < 100; a++)
             {
-                list.Add(new Segment() { MyProperty = a.ToString() }); ;
+                newList.Add(new Segment() { MyProperty = a.ToString() }); ;
             }
+
+            list = newList;
+
             return base.OnInitializedAsync();
         }
 
